@@ -1,32 +1,56 @@
 <script>
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-window.addToCart = function(product) {
-    cart.push(product);
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-    const count = document.getElementById("cart-count");
-    if (count) count.innerText = cart.length;
-
+function updateCartUI() {
     const list = document.getElementById("cart-items");
+    const count = document.getElementById("cart-count");
+
+    if (count) count.innerText = cart.length;
 
     if (!list) return;
 
     list.innerHTML = "";
 
-    cart.forEach(item => {
+    if (cart.length === 0) {
+        list.innerHTML = "<li>Your cart is empty</li>";
+        return;
+    }
+
+    cart.forEach((item, index) => {
         const li = document.createElement("li");
-        li.textContent = item;
+
+        li.innerHTML = `
+            ${item}
+            <button onclick="removeFromCart(${index})" style="margin-left:10px;color:red;">
+                Remove
+            </button>
+        `;
+
         list.appendChild(li);
     });
+}
 
-    console.log("Cart:", cart);
-};
+function addToCart(product) {
+    cart.push(product);
+    saveCart();
+    updateCartUI();
+}
 
-window.checkoutWhatsApp = function() {
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    saveCart();
+    updateCartUI();
+}
+
+function checkoutWhatsApp() {
     const phone = "254797411044";
 
     if (cart.length === 0) {
-        alert("Cart is empty");
+        alert("Your cart is empty");
         return;
     }
 
@@ -34,5 +58,8 @@ window.checkoutWhatsApp = function() {
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");
-};
+}
+
+// Load cart on page start
+updateCartUI();
 </script>
