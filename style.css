@@ -1,0 +1,408 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    background: #f7f7f7;
+}
+
+.hero-image {
+    width: 45%;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.hero-text {
+    width: 45%;
+}
+
+.hero-text h2 {
+    font-size: 42px;
+    color: #2e7d32;
+}
+
+.hero-text p {
+    font-size: 20px;
+    color: #555;
+}
+.order-btn,
+.cart-btn,
+.whatsapp-btn {
+    padding: 14px 24px;
+    font-size: 16px;
+}
+
+.order-btn {
+    background: #2e7d32;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.feature {
+    background: white;
+    width: 220px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.feature i {
+    font-size: 35px;
+    color: #2e7d32;
+}
+.products {
+    padding: 60px;
+    text-align: center;
+}
+
+.products h2 {
+    color: #2e7d32;
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 180px;
+    height: auto;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    transition: 0.3s;
+}
+.about {
+    background: #ffffff;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.about h2 {
+    color: #2e7d32;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 15px auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+.contact {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: black;
+}
+
+.contact .whatsapp-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: white;
+    color: #2e7d32;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.gallery {
+    padding: 60px 40px;
+    text-align: center;
+    background: #f8f8f8;
+}
+
+.gallery h2 {
+    color: #2e7d32;
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+.contact-form {
+    padding: 60px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.contact-form h2 {
+    color: #2e7d32;
+    margin-bottom: 30px;
+}
+
+.contact-form form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    margin-top: 10px;
+}
+.cart {
+    padding: 50px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.cart ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.cart-btn {
+    background: #ff9800;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-left: 15px;
+}
+html {
+    scroll-behavior: smooth;
+}
+.card:hover,
+.feature:hover,
+.gallery-item:hover {
+    transform: translateY(-8px);
+    transition: 0.3s ease;
+}
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #2e7d32;
+    cursor: pointer;
+    padding: 10px;
+}
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+}
+.footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.footer h3{
+    margin-bottom:10px;
+}
+
+.footer p{
+    margin:8px 0;
+}
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        margin-top: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 15px;
+        text-decoration: none;
+        color: #333;
+        border-bottom: 1px solid #eee;
+    }
+
+    nav a:hover {
+        background: #f5f5f5;
+        color: #2e7d32;
+    }
+}
+    .features,
+    .product-grid,
+    .gallery-grid,
+    .testimonial-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card,
+    .feature,
+    .testimonial {
+        width: 90%;
+    }
+
+    .contact-form form {
+        width: 100%;
+    }
+
+    .whatsapp-btn {
+        position: static;
+        margin-top: 15px;
+    }
+.business-hours {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.business-hours h2 {
+    margin-bottom: 20px;
+}
