@@ -31,7 +31,7 @@
         🛒 <span id="cart-count">0</span>
     </a>
 
-<button onclick="checkoutWhatsApp()" class="order-btn">
+<button onclick="checkoutWhatsApp()" class="order-btn">order via whatsapp
 </button>
     
 </div>
@@ -171,13 +171,12 @@
             </div>
         </section>
         <script>
-            function orderNow(product){
-                let phone="254797411044";
-                let message='Hello, I want to order:${product}`;
-                let url=
-                'https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-                window.open(url,"_blank");
-            }
+            function orderNow(product) {
+    let phone = "254797411044";
+    let message = `Hello, I want to order ${product}`;
+    let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+}
         </script>
         <section class="cart">
     <h2>Your Cart</h2>
@@ -214,8 +213,6 @@
 function toggleMenu() {
     document.getElementById("navbar").classList.toggle("active");
 }
- ...
-<script>
 function testCart(){ alert("JS is working"); }
 testCart();
 </script>
