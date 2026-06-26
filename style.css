@@ -83,11 +83,21 @@ nav a {
 .whatsapp-btn {
     background: #25D366;
     color: white;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 22px;
 }
 
 .cart-btn {
     background: orange;
     color: white;
+    padding: 8px 12px;
+    font-size: 15px;
+    border-radius: 8px;
 }
 
 .order-btn {
