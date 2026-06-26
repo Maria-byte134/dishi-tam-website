@@ -23,34 +23,40 @@
         <i class="fas fa-bars"></i>
     </div>
 
-    <a href="https://wa.me/254797411044?text=Hello%20I%20would%20like%20to%20order%20Dishi%20Tamu!" class="whatsapp-btn">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <header class="header">
 
-    <a href="#" class="cart-btn">
-        <section class="cart">
-    <h2>Your Cart</h2>
+    <div class="logo">
+        <img src="favicon.png" alt="Dishi Tamu Logo">
+        <div>
+            <h1>Dishi Tam</h1>
+            <p>Premium Maize Flour</p>
+        </div>
+    </div>
 
-    <ul id="cart-items"></ul>
+    <div class="header-right">
 
-    <button onclick="checkoutWhatsApp()" class="order-btn">
-        Order via WhatsApp
-    </button>
-</section>
-    </a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
 
-<button onclick="checkoutWhatsApp()" class="order-btn">order via whatsapp
-</button>
-    
-</div>
-                <nav id="navbar">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#products">Products</a>
-                    <a href="#order">Order</a>
-                    <a href="#contact">Contact</a>
-                  </nav>
-            </header>
+        <a href="https://wa.me/254797411044?text=Hello%20I%20would%20like%20to%20order%20Dishi%20Tamu!" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <a href="#" class="cart-btn">
+            🛒 <span id="cart-count">0</span>
+        </a>
+
+    </div>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
             <section id="home" class="hero">
                 <div class="hero-image">
                     <img src="dishitam.jpg.jpeg" alt=" Premium Maize Flour">
