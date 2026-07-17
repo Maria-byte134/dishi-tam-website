@@ -54,7 +54,18 @@ function checkoutWhatsApp() {
         return;
     }
 
-    const message = "Hello, I want to order:\n" + cart.join(", ");
+    const location = document.getElementById("location").value;
+
+    if (location === "") {
+        alert("Please select your delivery location");
+        return;
+    }
+
+    const message =
+        "Hello, I want to order:\n" +
+        cart.join(", ") +
+        "\n\nDelivery Location: " + location;
+
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");
