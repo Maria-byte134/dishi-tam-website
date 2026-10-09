@@ -1,8 +1,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f8f8f8;
-    color: #333;
+    background: #FFF8E7;
+    color: #333333;
 }
 
 html {
@@ -15,9 +15,9 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fff;
+    background: #FFFDF5;
     padding: 15px 25px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    box-shadow: 0 2px 8px rgba(36,86,56,0.12);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -37,7 +37,7 @@ html {
 
 .logo h1 {
     margin: 0;
-    color: #2e7d32;
+    color: #245638;
     font-size: 28px;
 }
 
@@ -68,7 +68,7 @@ nav a {
     display: none;
     font-size: 28px;
     cursor: pointer;
-    color: #2e7d32;
+    color: #245638;
 }
 
 .whatsapp-btn,
@@ -93,29 +93,37 @@ nav a {
 }
 
 .cart-btn {
-    background: orange;
-    color: white;
+    background: #E5AD32;
+    color: 243B2A;
     padding: 8px 12px;
     font-size: 15px;
     border-radius: 8px;
 }
 .add-cart-btn {
-    background: #2e7d32;
+    background: #245638;
     color: white;
     border: none;
     padding: 8px 14px;
     font-size: 14px;
     border-radius: 6px;
     cursor: pointer;
+    transition:background 0.3s ease;
 }
 
 .order-btn {
-    background: #2e7d32;
+    background: #245638;
     color: white;
     border: none;
     cursor: pointer;
+    transition:background 0.3s ease;
 }
-
+.add-cart-btn:hover,
+.order-btn:hover{
+    background:#183D27;
+}
+.cart-btn:hover{
+    background:#D49A20;
+}
 /* HERO */
 
 .hero {
@@ -140,7 +148,7 @@ nav a {
 }
 
 .hero-text h2 {
-    color: #2e7d32;
+    color: #245638;
     font-size: 38px;
 }
 
@@ -228,7 +236,7 @@ nav a {
 }
 
 .contact {
-    background: #2e7d32;
+    background: #245638;
     color: white;
     text-align: center;
 }
@@ -253,10 +261,11 @@ nav a {
 }
 
 .footer {
-    background: #1b5e20;
+    background: #183D27;
     color: white;
     text-align: center;
     padding: 30px;
+    border-top:4px solid #E5AD32;
 }
 
 /* MOBILE */
