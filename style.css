@@ -183,14 +183,21 @@ nav a {
 
 .card,
 .feature {
-    background: white;
+    background: #FFFDF5;
     width: 260px;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    border:1px solid #FOE2BD;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(36,86,56,0.08);
     text-align: center;
+    transition;transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card:hover,
+.featur:hover{
+    transform:translate Y(-5px);
+    box-shadow:0 8px 20px rgba(35,86,56,0.15);
+}
 .card img {
     
     display: block;
@@ -200,6 +207,17 @@ nav a {
     max-height: none;
     object-fit: contain;
     margin: 0 auto 15px;
+}
+
+.card h3{
+    color:#245638;
+    font-size:20px;
+    margin-bottom: 10px;
+}
+
+.card p{
+    color:#555555;
+    line-height:1.6;
 }
 
 .gallery-grid {
@@ -551,4 +569,31 @@ nav a{
     .gallery-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+}
+/* DISHI TAM SECTION STYLING */
+
+.products h2,
+.about h2,
+.gallery h2,
+.cart h2,
+.business-hours h2 {
+    color: #245638;
+}
+
+.about,
+.business-hours {
+    background: #F5EBD2;
+}
+
+.products,
+.gallery,
+.cart {
+    background: #FFF8E7;
+}
+
+/* Keyboard accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #B8860B;
+    outline-offset: 3px;
 }
