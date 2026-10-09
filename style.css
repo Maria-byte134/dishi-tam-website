@@ -122,17 +122,20 @@ nav a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 30px;
-    gap: 30px;
+    padding: 25px 20px;
+    gap: 20px;
 }
 
 .hero-image,
 .hero-text {
     flex: 1;
+    min-width:0;
 }
 
 .hero img {
     width: 100%;
+    height:auto;
+    display:block;
     border-radius: 10px;
 }
 
@@ -150,9 +153,18 @@ nav a {
 .contact-form,
 .cart,
 .business-hours {
-    padding: 50px 20px;
+    padding: 25px 20px;
+    margin:0;
 }
-
+.products h2,
+.about h2,
+.gallery h2,
+.contact h2,
+.cart h2,
+.business-hours h2,{
+    margin-top:0;
+    margin-bottom:20px;
+}
 .product-grid,
 .features {
     display: flex;
@@ -249,16 +261,32 @@ nav a{
 .hero{
     flex-direction:column;
     text-align:center;
+    padding:15px;
+    gap:15px;
 }
 
 .hero-image,
 .hero-text{
     width:100%;
+    flex:none;
 }
+    .hero-text h2{
+        font-size:28px;
+        margin-top:10px;
+    }
+    .products,
+    .about,
+    .gallery,
+    .contact-form,
+    .cart,
+    .business-hours{
+        padding:20px 15px;
+    }
 
 .card,
 .feature{
     width:90%;
+    box-sizing:boarder-box;
 }
 
 }
