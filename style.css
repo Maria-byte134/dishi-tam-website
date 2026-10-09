@@ -184,18 +184,47 @@ nav a {
 }
 
 .card img {
-    width: 180px;
+    
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    margin: 0 auto 15px;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    align-items: start;
 }
 
-.gallery-grid img {
+.gallery-item {
     width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
     border-radius: 10px;
+}
+
+.gallery-item p {
+    margin: 10px 0 15px;
+}
+
+@media (min-width: 769px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 .contact {
