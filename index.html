@@ -202,17 +202,38 @@
 
 </section>
 
-    <section class="cart">
+    <section class="cart" id="cart">
+    <h2>Your Shopping Cart</h2><div id="cart-items">
+    <p>Your cart is empty.</p>
+</div>
 
-    <h2>Your Cart</h2>
+<h3>Total Items: <span id="cart-count">0</span></h3>
 
-    <label for="location">Delivery Location:</label>
+<label for="customer-name">Your Name:</label>
+<input type="text" id="customer-name" placeholder="Enter your name">
 
-    <select id="location" required>
-        <option value="">Select location</option>
-        <option value="Nairobi">Nairobi</option>
-        <option value="Kiambu">Kiambu</option>
-    </select>
+<br><br>
+
+<label for="customer-phone">Your Phone Number:</label>
+<input type="tel" id="customer-phone" placeholder="Enter your phone number">
+
+<br><br>
+
+<label for="location">Delivery Location:</label>
+<select id="location">
+    <option value="">Select location</option>
+    <option value="Ndeiya, Limuru">Ndeiya, Limuru</option>
+    <option value="Nairobi">Nairobi</option>
+    <option value="Kiambu">Kiambu</option>
+</select>
+
+<br><br>
+
+<button type="button" onclick="checkoutWhatsApp()" class="order-btn">
+    Order via WhatsApp
+</button>
+
+</section>
 
     <ul id="cart-items"></ul>
 
@@ -254,47 +275,138 @@ function toggleMenu() {
     document.getElementById("navbar").classList.toggle("active");
 }
 
-let cart = [];
+const products = {
+    "Dishi Tam 1kg": { price: 0 },
+    "Dishi Tam 2kg": { price: 0 }
+};
+
+// Prices are set to 0 because your product prices may vary.
+let cart = JSON.parse(localStorage.getItem("dishiTamCart")) || {};
+
+function saveCart() {
+    localStorage.setItem("dishiTamCart", JSON.stringify(cart));
+}
 
 function addToCart(product) {
+    cart[product] = (cart[product] || 0) + 1;
+    saveCart();
+    renderCart();
 
-    cart.push(product);
+    document.getElementById("cart").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
 
-    document.getElementById("cart-count").textContent = cart.length;
+function changeQuantity(product, change) {
+    cart[product] = (cart[product] || 0) + change;
 
-    const li = document.createElement("li");
+    if (cart[product] <= 0) {
+        delete cart[product];
+    }
 
-    li.textContent = product;
+    saveCart();
+    renderCart();
+}
 
-    document.getElementById("cart-items").appendChild(li);
+function removeFromCart(product) {
+    delete cart[product];
+    saveCart();
+    renderCart();
+}
 
+function renderCart() {
+    const container = document.getElementById("cart-items");
+    const countElement = document.getElementById("cart-count");
+
+    container.innerHTML = "";
+    const totalItems = Object.values(cart).reduce(
+        (total, quantity) => total + quantity, 0
+    );
+
+    countElement.textContent = totalItems;
+
+    const headerCount = document.querySelector(".cart-btn span");
+    if (headerCount) headerCount.textContent = totalItems;
+
+    if (totalItems === 0) {
+        container.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+    }
+
+    for (const [product, quantity] of Object.entries(cart)) {
+        const item = document.createElement("div");
+        item.className = "cart-item";
+
+        const name = document.createElement("span");
+        name.textContent = `${product} × ${quantity}`;
+
+        const decrease = document.createElement("button");
+        decrease.textContent = "−";
+        decrease.type = "button";
+        decrease.setAttribute("aria-label", `Decrease ${product}`);
+        decrease.onclick = () => changeQuantity(product, -1);
+
+        const increase = document.createElement("button");
+        increase.textContent = "+";
+        increase.type = "button";
+        increase.setAttribute("aria-label", `Increase ${product}`);
+        increase.onclick = () => changeQuantity(product, 1);
+
+        const remove = document.createElement("button");
+        remove.textContent = "Remove";
+        remove.type = "button";
+        remove.onclick = () => removeFromCart(product);
+
+        item.append(name, decrease, increase, remove);
+        container.appendChild(item);
+    }
 }
 
 function checkoutWhatsApp() {
-
-    if(cart.length===0){
-
-        alert("Your cart is empty!");
-
-        return;
-
-    }
-
-    let phone="254797411044";
-
-    let message="Hello, I would like to order:\n\n";
-
-    cart.forEach(item=>{
-        message += "- " + item + "\n";
-    });
-
-    window.open(
-        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
-        "_blank"
+    const totalItems = Object.values(cart).reduce(
+        (total, quantity) => total + quantity, 0
     );
 
+    if (totalItems === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    const name = document.getElementById("customer-name").value.trim();
+    const customerPhone =
+        document.getElementById("customer-phone").value.trim();
+    const location = document.getElementById("location").value;
+
+    if (!name || !customerPhone || !location) {
+        alert("Please enter your name, phone number, and delivery location.");
+        return;
+    }
+
+    let message = `Hello Dishi Tam! I would like to place an order.
+
+Customer name: ${name}
+Customer phone: ${customerPhone}
+Delivery location: ${location}
+
+Order details:
+`;
+
+    for (const [product, quantity] of Object.entries(cart)) {
+        message += `- ${product} × ${quantity}\n`;
+    }
+
+    message += `
+Total packets: ${totalItems}
+Please confirm the current prices and delivery charges.`;
+
+    const url =
+        `https://wa.me/254797411044?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
 }
 
+renderCart();
 </script>
 
 </body>
