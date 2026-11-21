@@ -608,3 +608,21 @@ nav a:hover {
     background: var(--deep-green);
     border-top: 3px solid var(--gold);
 }
+/* CHRISTMAS ANNOUNCEMENT */
+.christmas-announcement {
+    background: #103923;
+    color: #EAD79F;
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.christmas-announcement span {
+    display: block;
+    color: #FFF8E7;
+    margin-top: 5px;
+    font-weight: normal;
+    letter-spacing: 0;
+}
