@@ -626,3 +626,35 @@ nav a:hover {
     font-weight: normal;
     letter-spacing: 0;
 }
+<section id="home" class="hero christmas-hero">
+
+    <div class="hero-image">
+        <img src="dishitam.jpg.jpeg"
+             alt="Dishi Tamu Premium Maize Flour">
+    </div>
+
+    <div class="hero-text">
+
+        <span class="christmas-label">
+            ✨ CHRISTMAS EDITION 2026 ✨
+        </span>
+
+        <h2>Celebrate Christmas with Dishi Tamu</h2>
+
+        <p>
+            Bringing families together this festive season
+            with quality maize flour, delicious meals and
+            the goodness of home.
+        </p>
+
+        <p class="christmas-message">
+            Make every family gathering memorable.
+        </p>
+
+        <a href="#products" class="order-btn">
+            Shop Our Products
+        </a>
+
+    </div>
+
+</section>
