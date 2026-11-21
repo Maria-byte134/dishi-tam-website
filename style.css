@@ -521,3 +521,90 @@ button:focus-visible {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+/* =================================
+   DISHI TAMU - LUXURY CHRISTMAS 2026
+================================= */
+
+:root {
+    --christmas-green: #174B32;
+    --deep-green: #103923;
+    --gold: #D6B45B;
+    --light-gold: #EAD79F;
+    --cream: #FFF8E7;
+    --white: #FFFDF5;
+    --text-dark: #26352B;
+}
+
+/* General appearance */
+body {
+    background: var(--cream);
+    color: var(--text-dark);
+}
+
+/* Main header */
+.header {
+    background: var(--white);
+    border-bottom: 2px solid var(--gold);
+}
+
+/* Logo */
+.logo h1 {
+    color: var(--christmas-green);
+}
+
+.logo p {
+    color: #A58337;
+}
+
+/* Navigation */
+nav a {
+    color: var(--deep-green);
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #B38B32;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+    background: var(--christmas-green);
+    color: white;
+    border: 1px solid var(--gold);
+}
+
+.whatsapp-btn:hover {
+    background: var(--deep-green);
+}
+
+/* Shopping buttons */
+.order-btn {
+    background: var(--christmas-green);
+    border: 1px solid var(--gold);
+    color: white;
+}
+
+.order-btn:hover {
+    background: #B38B32;
+    color: #103923;
+}
+
+/* Section headings */
+.products h2,
+.about h2,
+.gallery h2,
+.contact-form h2 {
+    color: var(--christmas-green);
+}
+
+/* Product cards */
+.card {
+    border: 1px solid #E6D7B3;
+    background: var(--white);
+}
+
+/* Footer */
+.footer {
+    background: var(--deep-green);
+    border-top: 3px solid var(--gold);
+}
